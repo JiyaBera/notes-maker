@@ -19,7 +19,7 @@ const App = () => {
 
         axios
 
-            .get("http://localhost:5000/api/notes")
+            .get("http://https://notes-maker-qejp.onrender.com/api/notes")
             .then((response) => setNotes(response.data))
             .catch((error) => console.error("Error fetching notes:", error));
     }, []);
@@ -31,7 +31,7 @@ const App = () => {
 
         axios
 
-            .post("http://localhost:5000/api/notes", { title, content })
+            .post("http://https://notes-maker-qejp.onrender.com/api/notes", { title, content })
             .then((response) => {
                 setNotes([...notes, response.data]);
                 setTitle("");
@@ -47,7 +47,7 @@ const App = () => {
 
         axios
 
-            .put(`http://localhost:5000/api/notes/${id}`, {
+            .put(`http://https://notes-maker-qejp.onrender.com/api/notes/${id}`, {
                 title: updatedTitle,
                 content: updatedContent,
             })
@@ -68,7 +68,7 @@ const App = () => {
 
         axios
 
-            .delete(`http://localhost:5000/api/notes/${id}`)
+            .delete(`http://https://notes-maker-qejp.onrender.com/api/notes/${id}`)
             .then((response) => {
                 const updatedNotes = notes.filter((note) => note._id !== id);
                 setNotes(updatedNotes);
